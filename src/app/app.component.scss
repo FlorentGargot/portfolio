@@ -1,0 +1,22 @@
+.main--grid{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header"
+    "menu menu"
+    "main main";
+}
+
+app-header{
+    grid-area: header;
+}
+
+app-menu{
+    grid-area: menu;
+}
+
+router-outlet{
+    grid-area: main;
+}
+
