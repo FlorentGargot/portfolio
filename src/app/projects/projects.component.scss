@@ -1,0 +1,19 @@
+@import '../../_settings.scss';
+
+.projects{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media screen and (min-width: 640px){
+    .projects{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .projects{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

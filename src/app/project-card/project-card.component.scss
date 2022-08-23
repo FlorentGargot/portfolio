@@ -1,0 +1,27 @@
+@import '../../_settings.scss';
+
+.project__card{
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 8px $black;
+    padding: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .3s;
+
+    &:hover{
+        transform: translate(3px, 3px);
+    }
+}
+
+.project__card__technology-list{
+    display: flex;
+    gap: 10px;
+}
+
+.project__card__technology{
+    border: 1px solid;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: 500;
+}

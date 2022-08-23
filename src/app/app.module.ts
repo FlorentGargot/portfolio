@@ -9,6 +9,10 @@ import { TechnologiesComponent } from './technologies/technologies.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ExperiencesComponent } from './experiences/experiences.component';
 import { AppRoutingModule } from './app-routing.module';
+import { Error404Component } from './error404/error404.component';
+import { AsideComponent } from './aside/aside.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
+import { SingleProjectComponent } from './single-project/single-project.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { AppRoutingModule } from './app-routing.module';
     MenuComponent,
     TechnologiesComponent,
     ProjectsComponent,
-    ExperiencesComponent
+    ExperiencesComponent,
+    Error404Component,
+    AsideComponent,
+    ProjectCardComponent,
+    SingleProjectComponent
   ],
   imports: [
     BrowserModule,

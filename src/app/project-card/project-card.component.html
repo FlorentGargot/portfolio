@@ -1,0 +1,11 @@
+<article class="project__card" routerLink="/projects/{{project.id}}" exact>
+    <div class="project__card__technology-list">
+        <span *ngFor="let technology of project.technologyObject" class="project__card__technology__container">
+            <div *ngIf="technology" class="project__card__technology" [ngStyle]="{'border-color': technology.color, 'color': technology.color}">{{technology.name}}</div>
+            
+        </span>
+    </div>
+    <h3 class="project__card__title">{{project.name}}</h3>
+    <img src="" alt="portfolio_picture"/>
+    <p class="project__card__anchor" *ngIf="project.anchorText">{{project.anchorText}}</p>
+</article>

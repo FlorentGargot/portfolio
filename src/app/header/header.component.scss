@@ -1,9 +1,11 @@
+@import '../../_settings.scss';
+
 header{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color:#faecd8;
+    background-color: $color-1;
 }
 
 .header__name{
