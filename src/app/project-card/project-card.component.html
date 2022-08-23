@@ -6,6 +6,6 @@
         </span>
     </div>
     <h3 class="project__card__title">{{project.name}}</h3>
-    <img src="" alt="portfolio_picture"/>
+    <img src="{{project.imageUrl}}" alt="portfolio_picture" class="project__card__image"/>
     <p class="project__card__anchor" *ngIf="project.anchorText">{{project.anchorText}}</p>
 </article>
