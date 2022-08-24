@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Project } from '../model/project.model';
 import { ProjectService } from '../services/project.service';
 
@@ -13,11 +14,12 @@ export class SingleProjectComponent implements OnInit {
   project?: Project;
 
   constructor(private projectService: ProjectService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
     const projectId = +this.route.snapshot.params['id'];
-    this.project = this.projectService.getProjectById(projectId);
+    this.projectService.getProjectById(projectId).subscribe(project => this.project = project);
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../model/project.model';
+import { Technology } from '../model/technology.model';
 import { ProjectService } from '../services/project.service';
+import { TechnologyService } from '../services/technology.service';
 
 @Component({
   selector: 'app-projects',
@@ -9,12 +11,25 @@ import { ProjectService } from '../services/project.service';
 })
 export class ProjectsComponent implements OnInit {
 
+  technologies!: Technology[];
   projects!: Project[];
 
-  constructor(private projectService: ProjectService) { }
+  constructor(private projectService: ProjectService,
+              private technologyService: TechnologyService) { }
 
   ngOnInit(): void {
-    this.projects = this.projectService.projects;
+
+
+
+    this.technologyService.getAllTechnologies().subscribe(tech => this.technologies = tech);
+    this.projectService.getAllProjects().subscribe(project => {
+      this.projects = project;
+
+      this.projects.forEach(el => {
+        el.technologyObject = el.technologies.map(id => this.technologies.find(tech => id === tech.id));
+      });
+    });
+
   }
 
 }
